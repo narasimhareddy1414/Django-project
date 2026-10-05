@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Update Note</h1>
+
+<br>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <label>Question</label>
+
+    <br><br>
+
+    <input
+        type="text"
+        name="Question"
+        value="{{ note.Question }}"
+        required
+    >
+
+    <br><br>
+
+
+    <label>Category</label>
+
+    <br><br>
+
+    <select name="category" required>
+
+        <option value="Python"
+        {% if note.category == 'Python' %}
+        selected
+        {% endif %}>
+            Python
+        </option>
+
+        <option value="HTML"
+        {% if note.category == 'HTML' %}
+        selected
+        {% endif %}>
+            HTML
+        </option>
+
+        <option value="CSS"
+        {% if note.category == 'CSS' %}
+        selected
+        {% endif %}>
+            CSS
+        </option>
+
+        <option value="JavaScript"
+        {% if note.category == 'JavaScript' %}
+        selected
+        {% endif %}>
+            JavaScript
+        </option>
+
+    </select>
+
+    <br><br>
+
+
+    <label>Answer</label>
+
+    <br><br>
+
+    <textarea
+        name="Answer"
+        rows="10"
+        required
+    >{{ note.Answer }}</textarea>
+
+    <br><br>
+
+    <button type="submit" class="btn">
+        Update Note
+    </button>
+
+</form>
+
+{% endblock %}

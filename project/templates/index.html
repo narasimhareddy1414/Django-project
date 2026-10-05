@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align:center; margin-bottom:50px;">
+
+    <p style="color:#4caf50;">
+        EXPLORE YOUR KNOWLEDGE
+    </p>
+
+    <h1 style="font-size:40px; margin:15px;">
+        Learn, Explore & Manage Your Notes
+    </h1>
+
+    <p>
+        Manage your programming notes easily in one place.
+    </p>
+
+</div>
+
+
+<div style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+">
+
+
+<div class="card">
+
+    <h2>🐍</h2>
+
+    <h2>Python</h2>
+
+    <p>
+        Learn, create, view and manage your Python notes.
+    </p>
+
+    <br>
+
+    <a href="{% url 'category_notes' 'Python' %}">
+        Explore Python →
+    </a>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🌐</h2>
+
+    <h2>HTML</h2>
+
+    <p>
+        Keep your HTML concepts and examples organized.
+    </p>
+
+    <br>
+
+    <a href="{% url 'category_notes' 'HTML' %}">
+        Explore HTML →
+    </a>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🎨</h2>
+
+    <h2>CSS</h2>
+
+    <p>
+        Store CSS properties, designs and examples.
+    </p>
+
+    <br>
+
+    <a href="{% url 'category_notes' 'CSS' %}">
+        Explore CSS →
+    </a>
+
+</div>
+
+
+<div class="card">
+
+    <h2>⚡</h2>
+
+    <h2>JavaScript</h2>
+
+    <p>
+        Save JavaScript concepts and useful examples.
+    </p>
+
+    <br>
+
+    <a href="{% url 'category_notes' 'JavaScript' %}">
+        Explore JavaScript →
+    </a>
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Notes Management</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #333;
+        }
+
+        nav {
+            background: #0b1c30;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        nav a:hover {
+            color: #4caf50;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            min-height: 70vh;
+        }
+
+        footer {
+            background: #08192d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #26364a;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>NOTES MANAGEMENT</h2>
+
+    <div>
+
+        <a href="{% url 'index' %}">Home</a>
+
+        <a href="{% url 'category_notes' 'Python' %}">
+            Python
+        </a>
+
+        <a href="{% url 'category_notes' 'HTML' %}">
+            HTML
+        </a>
+
+        <a href="{% url 'category_notes' 'CSS' %}">
+            CSS
+        </a>
+
+        <a href="{% url 'category_notes' 'JavaScript' %}">
+            JavaScript
+        </a>
+
+        <a href="{% url 'all_notes' %}">
+            All Notes
+        </a>
+
+        <a href="{% url 'add_note' %}">
+            Add Note
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Notes Management | All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ category }} Notes</h1>
+
+<br>
+
+<a href="{% url 'add_note' %}" class="btn">
+    + Add Note
+</a>
+
+<br><br>
+
+
+{% if notes %}
+
+{% for note in notes %}
+
+<div class="card" style="margin-bottom:20px;">
+
+    <h2>
+        {{ note.Question }}
+    </h2>
+
+    <p>
+        {{ note.Answer|truncatewords:30 }}
+    </p>
+
+    <br>
+
+    <a href="{% url 'note_detail' note.id %}"
+       class="btn">
+        Read More
+    </a>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<h3>
+    No {{ category }} notes found.
+</h3>
+
+{% endif %}
+
+{% endblock %}

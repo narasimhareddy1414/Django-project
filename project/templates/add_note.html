@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add New Note</h1>
+
+<br>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <label>Question</label>
+
+    <br><br>
+
+    <input
+        type="text"
+        name="Question"
+        placeholder="Enter question"
+        required
+    >
+
+    <br><br>
+
+    <label>Category</label>
+
+    <br><br>
+
+    <select name="category" required>
+
+        <option value="">
+            Select Category
+        </option>
+
+        <option value="Python">
+            Python
+        </option>
+
+        <option value="HTML">
+            HTML
+        </option>
+
+        <option value="CSS">
+            CSS
+        </option>
+
+        <option value="JavaScript">
+            JavaScript
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <label>Answer</label>
+
+    <br><br>
+
+    <textarea
+        name="Answer"
+        rows="10"
+        placeholder="Enter answer"
+        required
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit" class="btn">
+        Save Note
+    </button>
+
+</form>
+
+{% endblock %}
